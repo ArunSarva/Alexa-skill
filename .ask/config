@@ -1,0 +1,33 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.54388e6f-5ce3-45bd-af98-9def9c225212",
+      "was_cloned": false,
+      "merge": {},
+      "resources": {
+        "manifest": {
+          "eTag": "30144381ed50a58b29bc39156450cf0a"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "b870fdbcbc20ca1dd642c91b196a3eb1"
+          }
+        },
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:855061823259:function:ask-custom-arun-alexa-skill-default",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/custom",
+            "functionName": "ask-custom-arun-alexa-skill-default",
+            "handler": "index.handler",
+            "revisionId": "1334cce6-8235-4127-b9aa-1c5d93b53a3e",
+            "runtime": "nodejs8.10"
+          }
+        ]
+      }
+    }
+  }
+}

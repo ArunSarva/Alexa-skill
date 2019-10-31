@@ -1,0 +1,29 @@
+---
+configuration: # Here you define your locales and mocks
+    locale: en-US
+
+---
+- test: "Sequence 01. Test scenario: launch request, no further interaction."
+- LaunchRequest: # LaunchRequest is not an utterance but a request type
+  - response.outputSpeech.ssml: Welcome to Qwinix.
+  - response.card.type: undefined
+  - response.card.title: undefined
+  - response.card.content: "undefined" # Regular expression indicating any text will match
+
+---
+- test: "Sequence 02. Test scenario: BirthDayIntent with an utterance"
+- "namsathe arun":
+  - response.outputSpeech.ssml: "Hello Arun Namasthe how can I Help You" # i flag means case insensitive
+  - response.card.type: undefined
+  - response.card.title: undefined
+  - response.card.content: undefined
+
+---
+- test: "Sequence 03. Test scenario: CaptureBirthdayIntent  with an utterance"
+- "birthday of arun":
+    # const speakOutput = `Thanks, I'll remember that you were born ${month} ${day} ${year}.`;
+  - response.outputSpeech.ssml: "Thanks, I'll remember that you were born 2 28 1993" # i flag means case insensitive
+  - response.card.type: undefined
+  - response.card.title: undefined
+  - response.card.content: undefined
+

@@ -1,0 +1,84 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "welcome qwinix",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "welcomeqwinixIntent",
+                    "slots": [],
+                    "samples": [
+                        "namsathe"
+                    ]
+                },
+                {
+                    "name": "BirthDayIntent",
+                    "slots": [],
+                    "samples": [
+                        "namsathe arun",
+                        "Your birthday"
+                    ]
+                },
+                {
+                    "name": "CaptureBirthdayIntent",
+                    "slots": [
+                        {
+                            "name": "month",
+                            "type": "AMAZON.Month"
+                        },
+                        {
+                            "name": "day",
+                            "type": "AMAZON.Ordinal"
+                        },
+                        {
+                            "name": "year",
+                            "type": "AMAZON.FOUR_DIGIT_NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "{month} {day} {year}",
+                        "birthday of arun",
+                        "my Birthday is on {month}"
+                    ]
+                },
+                {
+                    "name": "NumberIntent",
+                    "slots": [
+                        {
+                            "name": "Firstnumber",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "SecondNumber",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "which is bigest in {Firstnumber} {SecondNumber}",
+                        "find greatest in {Firstnumber} {SecondNumber} "
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        }
+    }
+}
