@@ -18,5 +18,5 @@ configuration: # Here you define your locales and mocks
 
 ---
 - test: "Sequence 04. Test scenario: GreatestNumbersIntent with an utterance"
-- "which is biggest no in 30 and 20":
-  - response.outputSpeech.ssml: "30 is greater then 20"
+- "which is biggest no in 2,000 and 3,000":
+  - response.outputSpeech.ssml: "3000 is greater then 200"

@@ -76,14 +76,17 @@ const GreatestNumbersIntentHandler = {
         return handlerInput.requestEnvelope.request.intent.name === 'GreatestNumbersIntent';
     },
     handle(handlerInput) {
+        console.log(handlerInput.requestEnvelope.request.intent.slots)
+
         const firstnumber = handlerInput.requestEnvelope.request.intent.slots.FirstNumber.value;       
         const secondnumber = handlerInput.requestEnvelope.request.intent.slots.SecondNumber.value;
         if (firstnumber < secondnumber) {
-            greater = `${secondnumber} is greater then ${firstnumber}`;            
+            greater = secondnumber + " is greater then " + firstnumber;            
         }
         else {
-            greater = `${firstnumber} is greater then ${secondnumber}`;
+            greater = firstnumber  + " is greater then " + secondnumber ;
         }
+        console.log(greater)
         return handlerInput.responseBuilder
             .speak(greater)
             .getResponse();
