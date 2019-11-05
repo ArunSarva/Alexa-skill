@@ -60,7 +60,6 @@ Constants.PENDING = "#" + Constants.PENDING_RAW;
 Constants.PASSED_TEST = "passed-test";
 Constants.FAILED_TEST = "failed-test";
 Constants.PENDING_TEST = "pending-test";
-Constants.BOTH_TEST = "both-test";
 
 },{}],3:[function(require,module,exports){
 "use strict";
@@ -124,11 +123,36 @@ class Render {
             $("#lab-failoff-switch").prop("checked", false);
             $(`.${Constants_1.Constants.FAILED_TEST}`).hide();
         }
-        if (config.hidePassing && config.hideFailing) {
+        if (config.hidePending) {
+            $("#lab-pendingoff-switch").prop("checked", false);
             $(`.${Constants_1.Constants.PENDING_TEST}`).hide();
         }
-        const passSwitch = new Switch_1.Switch($("#lab-passoff-switch"), $("." + Constants_1.Constants.PASSED_TEST), $("#lab-failoff-switch"), $("." + Constants_1.Constants.BOTH_TEST));
-        const failSwitch = new Switch_1.Switch($("#lab-failoff-switch"), $("." + Constants_1.Constants.FAILED_TEST), $("#lab-passoff-switch"), $("." + Constants_1.Constants.BOTH_TEST));
+        if (config.hideFailing && config.hidePassing) {
+            console.log("`${Constants.FAILED_TEST}\\.${Constants.PASSED_TEST}`", `${Constants_1.Constants.FAILED_TEST}\\.${Constants_1.Constants.PASSED_TEST}`);
+            $(`.${Constants_1.Constants.FAILED_TEST}\\.${Constants_1.Constants.PASSED_TEST}`).hide();
+        }
+        if (config.hidePending && config.hidePassing) {
+            $(`.${Constants_1.Constants.PASSED_TEST}\\.${Constants_1.Constants.PENDING_TEST}`).hide();
+        }
+        if (config.hideFailing && config.hidePending) {
+            $(`.${Constants_1.Constants.FAILED_TEST}\\.${Constants_1.Constants.PENDING_TEST}`).hide();
+        }
+        if (config.hideFailing && config.hidePassing && config.hidePending) {
+            $(`.${Constants_1.Constants.FAILED_TEST}\\.${Constants_1.Constants.PASSED_TEST}\\.${Constants_1.Constants.PENDING_TEST}`).hide();
+        }
+        const allCheckArray = new Array();
+        allCheckArray.push($("#lab-passoff-switch"));
+        allCheckArray.push($("#lab-failoff-switch"));
+        allCheckArray.push($("#lab-pendingoff-switch"));
+        const allStylesArray = [Constants_1.Constants.PASSED_TEST, Constants_1.Constants.FAILED_TEST, Constants_1.Constants.PENDING_TEST];
+        const allSwitchArray = ["#lab-passoff-switch", "#lab-failoff-switch", "#lab-pendingoff-switch"];
+        allStylesArray.forEach((style, index) => {
+            const checksMinusCurrentOne = allCheckArray.slice();
+            checksMinusCurrentOne.splice(index, 1);
+            const stylesMinusCurrentOne = allStylesArray.slice();
+            stylesMinusCurrentOne.splice(index, 1);
+            const switchElement = new Switch_1.Switch($(allSwitchArray[index]), $("." + style), style, checksMinusCurrentOne, stylesMinusCurrentOne);
+        });
     }
     static updateStatusArea(results) {
         Status_1.Status.setResultsClass($("#test-suites-results"), results.numPassedTestSuites, results.numTotalTestSuites - results.numPassedTestSuites - results.numPendingTestSuites);
@@ -382,27 +406,58 @@ TestDifference.DIFF_END_INDICATOR = /(at .*? \(.*?:[0-9]+:[0-9]+\)\s)/g;
 Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("util");
 class Switch {
-    constructor(checkBox, divClass, addtnlCheckBox, addtnlDivClass) {
-        this.activateFilters(checkBox, divClass, addtnlCheckBox, addtnlDivClass);
+    constructor(checkBox, divClass, divClassName, addtnlCheckBoxArray, addtnlClassNameArray) {
+        this.activateFilters(checkBox, divClass, divClassName, addtnlCheckBoxArray, addtnlClassNameArray);
     }
-    activateFilters(checkBox, divClass, addtnlCheckBox, addtnlDivClass) {
+    static mixStatus(currentStatus, oldStatus) {
+        const statusArray = oldStatus.split(Switch.JOIN_CHAR);
+        statusArray.push(currentStatus);
+        const sortedUniqueStatusArray = [...new Set(statusArray)].sort();
+        return sortedUniqueStatusArray.join(Switch.JOIN_CHAR);
+    }
+    activateFilters(checkBox, divClass, divClassName, addtnlCheckBoxArray, addtnlClassNameArray) {
         checkBox.change(() => {
             if (checkBox.is(":checked")) {
                 divClass.show();
-                if (!util_1.isNullOrUndefined(addtnlCheckBox) && !addtnlCheckBox.is(":checked")) {
-                    addtnlDivClass.show();
+                if (!util_1.isNullOrUndefined(addtnlCheckBoxArray)) {
+                    addtnlCheckBoxArray.forEach((addtnlCheckBox, index) => {
+                        const mixedDualClass = Switch.mixStatus(addtnlClassNameArray[index], divClassName);
+                        const mixedClassDiv = $("." + mixedDualClass);
+                        mixedClassDiv.show();
+                    });
+                    const mixedClass = Switch.mixStatus(addtnlClassNameArray[0], divClassName);
+                    const allMixedClass = Switch.mixStatus(addtnlClassNameArray[1], mixedClass);
+                    const allMixedClassDiv = $("." + allMixedClass);
+                    allMixedClassDiv.show();
                 }
             }
             else {
                 divClass.hide();
-                if (!util_1.isNullOrUndefined(addtnlCheckBox) && !addtnlCheckBox.is(":checked")) {
-                    addtnlDivClass.hide();
+                if (!util_1.isNullOrUndefined(addtnlCheckBoxArray)) {
+                    let allUnchecked = true;
+                    addtnlCheckBoxArray.forEach((addtnlCheckBox, index) => {
+                        if (!addtnlCheckBox.is(":checked")) {
+                            const mixedClass = Switch.mixStatus(addtnlClassNameArray[index], divClassName);
+                            const mixedClassDiv = $("." + mixedClass);
+                            mixedClassDiv.hide();
+                        }
+                        else {
+                            allUnchecked = false;
+                        }
+                    });
+                    if (allUnchecked) {
+                        const mixedClass = Switch.mixStatus(addtnlClassNameArray[0], divClassName);
+                        const allMixedClass = Switch.mixStatus(addtnlClassNameArray[1], mixedClass);
+                        const allMixedClassDiv = $("." + allMixedClass);
+                        allMixedClassDiv.hide();
+                    }
                 }
             }
         });
     }
 }
 exports.Switch = Switch;
+Switch.JOIN_CHAR = "\\.";
 
 },{"util":47}],9:[function(require,module,exports){
 "use strict";
@@ -423,52 +478,7 @@ class TestSuite {
             let testStatusClass;
             const testSectionStatus = new Map();
             for (const result of testResult.testResults) {
-                if (result.status === Constants_1.Constants.TEST_STATUS_FAIL) {
-                    if (testStatusClass === Constants_1.Constants.BOTH_TEST) {
-                    }
-                    else if (testStatusClass === Constants_1.Constants.PASSED_TEST) {
-                        testStatusClass = Constants_1.Constants.BOTH_TEST;
-                    }
-                    else {
-                        testStatusClass = Constants_1.Constants.FAILED_TEST;
-                    }
-                    for (let index = 0; index < result.ancestorTitles.length; index++) {
-                        const titlesCopy = result.ancestorTitles.slice();
-                        titlesCopy.splice(index + 1);
-                        const key = titlesCopy.join(TestSuite.JOIN_CHAR);
-                        if (testSectionStatus.has(key)) {
-                            if (testSectionStatus.get(key) === Constants_1.Constants.PASSED_TEST) {
-                                testSectionStatus.set(key, Constants_1.Constants.BOTH_TEST);
-                            }
-                        }
-                        else {
-                            testSectionStatus.set(key, Constants_1.Constants.FAILED_TEST);
-                        }
-                    }
-                }
-                if (result.status === Constants_1.Constants.TEST_STATUS_PASS) {
-                    if (testStatusClass === Constants_1.Constants.BOTH_TEST) {
-                    }
-                    else if (testStatusClass === Constants_1.Constants.FAILED_TEST) {
-                        testStatusClass = Constants_1.Constants.BOTH_TEST;
-                    }
-                    else {
-                        testStatusClass = Constants_1.Constants.PASSED_TEST;
-                    }
-                    for (let index = 0; index < result.ancestorTitles.length; index++) {
-                        const titlesCopy = result.ancestorTitles.slice();
-                        titlesCopy.splice(index + 1);
-                        const key = titlesCopy.join(TestSuite.JOIN_CHAR);
-                        if (testSectionStatus.has(key)) {
-                            if (testSectionStatus.get(key) === Constants_1.Constants.FAILED_TEST) {
-                                testSectionStatus.set(key, Constants_1.Constants.BOTH_TEST);
-                            }
-                        }
-                        else {
-                            testSectionStatus.set(key, Constants_1.Constants.PASSED_TEST);
-                        }
-                    }
-                }
+                testStatusClass = TestSuite.asignStatus(testStatusClass, result, testSectionStatus);
             }
             if (testStatusClass === undefined) {
                 testStatusClass = Constants_1.Constants.PASSED_TEST;
@@ -521,6 +531,52 @@ class TestSuite {
             elements.push(div);
         });
         return elements;
+    }
+    static asignStatus(testStatusClass, result, testSectionStatus) {
+        const currentStatus = TestSuite.getStatusClassFromJestStatus(result.status);
+        if (!testStatusClass) {
+            testStatusClass = currentStatus;
+        }
+        else if (testStatusClass !== currentStatus) {
+            testStatusClass = TestSuite.mixStatus(currentStatus, testStatusClass);
+        }
+        else {
+            testStatusClass = currentStatus;
+        }
+        for (let index = 0; index < result.ancestorTitles.length; index++) {
+            const titlesCopy = result.ancestorTitles.slice();
+            titlesCopy.splice(index + 1);
+            const key = titlesCopy.join(TestSuite.JOIN_CHAR);
+            if (testSectionStatus.has(key)) {
+                if (testStatusClass !== currentStatus) {
+                    testSectionStatus.set(key, TestSuite.mixStatus(currentStatus, testStatusClass));
+                }
+                else {
+                    testSectionStatus.set(key, currentStatus);
+                }
+            }
+            else {
+                testSectionStatus.set(key, currentStatus);
+            }
+        }
+        return testStatusClass;
+    }
+    static getStatusClassFromJestStatus(jestStatus) {
+        if (jestStatus === Constants_1.Constants.TEST_STATUS_PEND) {
+            return Constants_1.Constants.PENDING_TEST;
+        }
+        else if (jestStatus === Constants_1.Constants.TEST_STATUS_FAIL) {
+            return Constants_1.Constants.FAILED_TEST;
+        }
+        else {
+            return Constants_1.Constants.PASSED_TEST;
+        }
+    }
+    static mixStatus(currentStatus, oldStatus) {
+        const statusArray = oldStatus.split(TestSuite.JOIN_CHAR);
+        statusArray.push(currentStatus);
+        const sortedUniqueStatusArray = [...new Set(statusArray)].sort();
+        return sortedUniqueStatusArray.join(TestSuite.JOIN_CHAR);
     }
 }
 exports.TestSuite = TestSuite;

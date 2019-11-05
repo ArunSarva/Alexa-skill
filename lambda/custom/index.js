@@ -39,57 +39,53 @@ const HelloWorldIntentHandler = {
 };
 const BirthDayIntentHandler = {
     canHandle(handlerInput) {
-        return Alexa.getIntentName(handlerInput.requestEnvelope) === 'BirthDayIntent';
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'&&
+         Alexa.getIntentName(handlerInput.requestEnvelope) === 'BirthDayIntent';
     },
     handle(handlerInput) {
-        const speakOutput = handlerInput.t('HELLO_MSG');
+        console.log(handlerInput.requestEnvelope.request.intent.slots.name.value)
+        const name = handlerInput.requestEnvelope.request.intent.slots.name.value;
+        // const name = "Arun"
+        const speakOutput = "Hello "+ name +" Namasthe how can I Help You";
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt('BIRTHDAY_MSG')
+            // .reprompt(speakOutput)
             .getResponse();
     }
 };
 const CaptureBirthdayIntentHandler = {
-    
+
     canHandle(handlerInput) {
-        return handlerInput.requestEnvelope.request.intent.name === 'CaptureBirthdayIntent';
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'&&
+         handlerInput.requestEnvelope.request.intent.name === 'CaptureBirthdayIntent';
     },
     handle(handlerInput) {
         console.log(handlerInput.requestEnvelope.request.intent.slots)
         const year = handlerInput.requestEnvelope.request.intent.slots.year.value;
         const month = handlerInput.requestEnvelope.request.intent.slots.month.value;
         const day = handlerInput.requestEnvelope.request.intent.slots.day.value;
-        // const year =1993;
-        // const month =2;
-        // const day =28;
-        const speakOutput =`Thanks, I'll remember that you were born on ${month}` ;
+        const speakOutput = `Thanks, I'll remember that you were born on ${month} ${day} ${year}`;
         return handlerInput.responseBuilder
             .speak(speakOutput)
             // .reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
     }
-
 };
-const NumbersIntentHandler = {
+const GreatestNumbersIntentHandler = {
     canHandle(handlerInput) {
-        return Alexa.getIntentName(handlerInput.requestEnvelope) === 'NumberIntent';
+        return handlerInput.requestEnvelope.request.intent.name === 'GreatestNumbersIntent';
     },
     handle(handlerInput) {
-        
-        const firstnumber = handlerInput.requestEnvelope.request.intent.slots.Firstnumber.value;
-        const secondnumber = handlerInput.requestEnvelope.request.intent.slots.Secondnumber.value;
-        if(firstnumber<secondnumber)
-        {
-            const speakOutput = handlerInput.t(`${firstnumber} is greater then ${secondnumber}`);
+        const firstnumber = handlerInput.requestEnvelope.request.intent.slots.FirstNumber.value;       
+        const secondnumber = handlerInput.requestEnvelope.request.intent.slots.SecondNumber.value;
+        if (firstnumber < secondnumber) {
+            greater = `${secondnumber} is greater then ${firstnumber}`;            
         }
-        else
-        {
-            const speakOutput = handlerInput.t(`${secondnumber} is greater then ${firstnumber}`);
+        else {
+            greater = `${firstnumber} is greater then ${secondnumber}`;
         }
-        // const speakOutput = handlerInput.t('HELLO_MSG');
         return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt('BIRTHDAY_MSG')
+            .speak(greater)
             .getResponse();
     }
 };
@@ -168,7 +164,7 @@ const IntentReflectorHandler = {
     },
     handle(handlerInput) {
         const intentName = Alexa.getIntentName(handlerInput.requestEnvelope);
-        const speakOutput = handlerInput.t('REFLECTOR_MSG', {intentName: intentName});
+        const speakOutput = handlerInput.t('REFLECTOR_MSG', { intentName: intentName });
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -187,7 +183,7 @@ const ErrorHandler = {
     },
     handle(handlerInput, error) {
         const speakOutput = handlerInput.t('ERROR_MSG');
-        console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
+        // console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -216,8 +212,8 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         BirthDayIntentHandler,
-        NumbersIntentHandler,
         CaptureBirthdayIntentHandler,
+        GreatestNumbersIntentHandler,
         HelloWorldIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,

@@ -11,7 +11,7 @@ module.exports = {
             WELCOME_MSG: 'Welcome to Qwinix.',
             HELLO_MSG: 'Hello Arun Namasthe how can I Help You',
             BIRTHDAY_MSG: 'wish me on feb 28',
-            BIRTH_MSG: "Thanks, I'll remember that your birthday is ${month} ${day} ${year}",
+            // BIRTH_MSG: "Thanks, I'll remember that your birthday is ${month} ${day} ${year}",
             HELP_MSG: 'You can say hello to me! How can I help?',
             GOODBYE_MSG: 'Goodbye!',
             REFLECTOR_MSG: 'You just triggered {{intentName}}',

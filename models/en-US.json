@@ -24,9 +24,14 @@
                 },
                 {
                     "name": "BirthDayIntent",
-                    "slots": [],
+                    "slots": [
+                        {
+                            "name": "name",
+                            "type": "AMAZON.US_FIRST_NAME"
+                        }
+                    ],
                     "samples": [
-                        "namsathe arun",
+                        "namasthe {name}",
                         "Your birthday"
                     ]
                 },
@@ -48,15 +53,14 @@
                     ],
                     "samples": [
                         "{month} {day} {year}",
-                        "birthday of arun",
-                        "my Birthday is on {month}"
+                        "birthday is on {day} of {month} in {year}"
                     ]
                 },
                 {
-                    "name": "NumberIntent",
+                    "name": "GreatestNumbersIntent",
                     "slots": [
                         {
-                            "name": "Firstnumber",
+                            "name": "FirstNumber",
                             "type": "AMAZON.NUMBER"
                         },
                         {
@@ -64,9 +68,10 @@
                             "type": "AMAZON.NUMBER"
                         }
                     ],
-                    "samples": [
-                        "which is bigest in {Firstnumber} {SecondNumber}",
-                        "find greatest in {Firstnumber} {SecondNumber} "
+                    "samples": [                        
+                        "which is biggest no in {FirstNumber} and {SecondNumber}",
+                        "hi arun",
+                        "find greatest in {FirstNumber} {SecondNumber}"
                     ]
                 },
                 {

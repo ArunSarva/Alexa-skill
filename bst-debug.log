@@ -42,3 +42,189 @@
     at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
     at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
     at new Promise (<anonymous>)
+2019-10-31T05:21:44.889Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-10-31T05:21:44.899Z error: bst-test            SyntaxError: C:\Users\Qwinix\Documents\arun-alexa-skill\lambda\custom\index.js: Lexical declaration cannot appear in a single-statement context (85:12)
+
+[0m [90m 83 | [39m        [36mif[39m(firstnumber[33m<[39m[33msecondnumber[39m)[0m
+[0m [90m 84 | [39m        [0m
+[0m[31m[1m>[22m[39m[90m 85 | [39m            [36mconst[39m speakOutput [33m=[39m handlerInput[33m.[39mt([32m`${firstnumber} is greater then ${secondnumber}`[39m)[33m;[39m[0m
+[0m [90m    | [39m            [31m[1m^[22m[39m[0m
+[0m [90m 86 | [39m        [36melse[39m[0m
+[0m [90m 87 | [39m            [36mconst[39m speakOutput [33m=[39m handlerInput[33m.[39mt([32m`${secondnumber} is greater then ${firstnumber}`[39m)[33m;[39m[0m
+[0m [90m 88 | [39m        [0m
+    at Parser.raise (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:6420:17)
+    at Parser.unexpected (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:7773:16)
+    at Parser.parseStatementContent (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10073:16)
+    at Parser.parseStatement (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10009:17)
+    at Parser.parseIfStatement (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10363:28)
+    at Parser.parseStatementContent (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10054:21)
+    at Parser.parseStatement (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10009:17)
+    at Parser.parseBlockOrModuleBlockBody (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10585:25)
+    at Parser.parseBlockBody (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10572:10)
+    at Parser.parseBlock (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10556:10)
+2019-10-31T05:21:44.905Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-10-31T05:21:44.908Z error: bst-test            TypeError: lambdaFunction is not a function
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
+    at new Promise (<anonymous>)
+2019-10-31T05:21:44.909Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-10-31T05:21:44.910Z error: bst-test            TypeError: lambdaFunction is not a function
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
+    at new Promise (<anonymous>)
+2019-10-31T05:21:44.912Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-10-31T05:21:44.912Z error: bst-test            TypeError: lambdaFunction is not a function
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
+    at new Promise (<anonymous>)
+2019-11-04T07:32:24.112Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-04T07:32:24.129Z error: bst-test            SyntaxError: C:\Users\Qwinix\Documents\arun-alexa-skill\lambda\custom\index.js: Identifier 'name' has already been declared (48:14)
+
+[0m [90m 46 | [39m        console[33m.[39mlog(handlerInput[33m.[39mrequestEnvelope[33m.[39mrequest[33m.[39mintent[33m.[39mslots[33m.[39mname[33m.[39mvalue)[0m
+[0m [90m 47 | [39m        [36mconst[39m name [33m=[39m handlerInput[33m.[39mrequestEnvelope[33m.[39mrequest[33m.[39mintent[33m.[39mslots[33m.[39mname[33m.[39mvalue[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 48 | [39m        [36mconst[39m name [33m=[39m [32m"Arun"[39m[0m
+[0m [90m    | [39m              [31m[1m^[22m[39m[0m
+[0m [90m 49 | [39m        [36mconst[39m speakOutput [33m=[39m [32m"Hello"[39m[33m+[39mhandlerInput[33m.[39mrequestEnvelope[33m.[39mrequest[33m.[39mintent[33m.[39mslots[33m.[39mname[33m.[39mvalue [33m+[39m[32m"Namasthe how can I Help You"[39m[33m;[39m[0m
+[0m [90m 50 | [39m        [36mreturn[39m handlerInput[33m.[39mresponseBuilder[0m
+[0m [90m 51 | [39m            [33m.[39mspeak(speakOutput)[0m
+    at Parser.raise (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:6420:17)
+    at ScopeHandler.checkRedeclarationInScope (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:3776:12)
+    at ScopeHandler.declareName (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:3742:12)
+    at Parser.checkLVal (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:8159:22)
+    at Parser.parseVarId (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10682:10)
+    at Parser.parseVar (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10657:12)
+    at Parser.parseVarStatement (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10479:10)
+    at Parser.parseStatementContent (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10076:21)
+    at Parser.parseStatement (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10009:17)
+    at Parser.parseBlockOrModuleBlockBody (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\@babel\parser\lib\index.js:10585:25)
+2019-11-04T07:32:24.160Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-04T07:32:24.164Z error: bst-test            TypeError: lambdaFunction is not a function
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
+    at new Promise (<anonymous>)
+2019-11-04T07:32:24.166Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-04T07:32:24.166Z error: bst-test            TypeError: lambdaFunction is not a function
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
+    at new Promise (<anonymous>)
+2019-11-04T07:32:24.167Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-04T07:32:24.168Z error: bst-test            TypeError: lambdaFunction is not a function
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
+    at new Promise (<anonymous>)
+2019-11-05T06:42:06.223Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-05T06:42:06.268Z error: bst-test            ReferenceError: BirthDayIntentHandler is not defined
+    at Object.<anonymous> (C:\Users\Qwinix\Documents\arun-alexa-skill\lambda\custom\index.js:224:9)
+    at Runtime._execModule (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\jest-runtime\build\index.js:867:68)
+    at Runtime._loadModule (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\jest-runtime\build\index.js:577:12)
+    at Runtime.requireModule (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\jest-runtime\build\index.js:433:10)
+    at Runtime.requireModuleOrMock (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\jest-runtime\build\index.js:598:21)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:17:29)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+2019-11-05T06:42:06.294Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-05T06:42:06.304Z error: bst-test            TypeError: lambdaFunction is not a function
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
+    at new Promise (<anonymous>)
+2019-11-05T06:42:06.306Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-05T06:42:06.306Z error: bst-test            TypeError: lambdaFunction is not a function
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
+    at new Promise (<anonymous>)
+2019-11-05T06:42:06.308Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-05T06:42:06.308Z error: bst-test            TypeError: lambdaFunction is not a function
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:65:41)
+    at step (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:32:23)
+    at Object.next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:13:53)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\impl\SkillInteractor.js:7:71
+    at new Promise (<anonymous>)
+2019-11-05T08:23:15.320Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-05T08:23:15.330Z error: bst-test            SyntaxError: Unexpected string in JSON at position 1982
+    at JSON.parse (<anonymous>)
+    at Function.Object.<anonymous>.InteractionModel.fromFile (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\model\InteractionModel.js:45:25)
+    at VirtualAlexaBuilder.Object.<anonymous>.VirtualAlexaBuilder.create (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\virtual-alexa\lib\src\core\VirtualAlexa.js:164:57)
+    at VirtualAlexaInvoker.before (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\skill-testing-ml\dist\lib\runner\VirtualAlexaInvoker.js:58:48)
+    at TestRunner.<anonymous> (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\skill-testing-ml\dist\lib\runner\TestRunner.js:144:25)
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\skill-testing-ml\dist\lib\runner\TestRunner.js:1:130)
+    at _next (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\skill-testing-ml\dist\lib\runner\TestRunner.js:3:194)
+    at C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\skill-testing-ml\dist\lib\runner\TestRunner.js:3:364
+    at new Promise (<anonymous>)
+2019-11-05T08:34:37.063Z error: bst-test            Error using bst-test on Node: v8.11.1
+2019-11-05T08:34:37.080Z error: bst-test            YAMLException: bad indentation of a sequence entry at line 22, column 56:
+     ... ch.ssml: "20 is greater then 10"s
+                                         ^
+    at generateError (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:191:10)
+    at throwError (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:197:9)
+    at readBlockSequence (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:972:7)
+    at composeNode (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:1401:45)
+    at readBlockMapping (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:1099:11)
+    at composeNode (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:1370:12)
+    at readBlockSequence (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:965:5)
+    at composeNode (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:1369:12)
+    at readDocument (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:1530:3)
+    at loadDocuments (C:\Users\Qwinix\AppData\Roaming\npm\node_modules\bespoken-tools\node_modules\js-yaml-bespoken\lib\js-yaml\loader.js:1586:5)
